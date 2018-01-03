@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Vue.js Playground</h2>
+    <div class="main-ui" id="app">
+      {{ welcome }} <br>
+
+      <!-- Name rendering -->
+      <p v-for="name in names">
+        {{ name }}
+      </p>
+      <br>
+
+      <!-- TODO WITH COMPONENTS -->
+      <todo></todo>
+
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+  <script src="app.js"></script>
+</html>
