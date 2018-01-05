@@ -1,18 +1,20 @@
-let todo = Vue.component('todo',{
+let Todo = Vue.component('todo',{
   data: function() {
     return {
-      todo: ''
+      todo: ['']
     }
   },
   methods: {
     addTodo: function() {
-      document.getElementById('todos').innerHTML = this.todo
+      todo.push(this.todo)
+      // NEED TO PUSH NEW TODO INTO ARRAY (TOD IS AN EMPTY ARRAY TO WHICH WE PUSH NEW TODOS)
+      // document.getElementById('todos').innerHTML = this.todo
     }
   },
   template: `<div>
     <input type="text" v-model.lazy="todo"></input>
     <button @click="addTodo">Add todo</button>
-    <ul id="todos"></ul>
+    <ul>{{ todo }}</ul>
   </div>`
 })
 

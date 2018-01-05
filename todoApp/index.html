@@ -6,6 +6,11 @@
   </head>
   <body>
     <h2>Vue.js Playground</h2>
+    <script type="text/javascript">
+      let yolo = ['Hello', 'Goodbye']
+      yolo.push('Ma gueule')
+      console.log(yolo)
+    </script>
     <div class="main-ui" id="app">
       {{ welcome }} <br>
 
@@ -17,6 +22,9 @@
 
       <!-- TODO WITH COMPONENTS -->
       <todo></todo>
+      <p>
+        {{ this.todo }}
+      </p>
 
     </div>
   </body>
