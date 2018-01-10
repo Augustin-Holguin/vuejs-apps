@@ -1,16 +1,15 @@
 <template>
   <div>
-    <h1>Hello World</h1>
-    <yolo></yolo>
+    <todo></todo>
   </div>
 </template>
 
 <script>
-import Yolo from './components/Yolo'
+import Todo from './components/Todo'
 
 export default {
   components: {
-    Yolo
+    Todo
   }
 }
 </script>
@@ -20,8 +19,4 @@ export default {
    margin: 0;
    padding: 0;
  }
- 
-  h1 {
-    text-align: center;
-  }
 </style>
