@@ -8,22 +8,30 @@
     <h2>Vue.js Playground</h2>
     <script type="text/javascript">
       let yolo = ['Hello', 'Goodbye']
-      yolo.push('Ma gueule')
+      addYolo() => yolo.push('Ma gueule')
       console.log(yolo)
     </script>
+    <button onclick="addYolo()"></button>
     <div class="main-ui" id="app">
       {{ welcome }} <br>
 
       <!-- Name rendering -->
-      <p v-for="name in names">
-        {{ name }}
-      </p>
+      <ul>
+        <li v-for="name in names" :key="name">
+          {{ name }}
+        </li>
+      </ul>
+      <input type="text" id="newName"></input>
+      <button @click="addName" @keyup.enter="addTodo">Add name</button>
       <br>
 
       <!-- TODO WITH COMPONENTS -->
       <todo></todo>
+
+      <!-- OTHER TODO TEST -->
+      <button @click="showTodo">Add todo</button>
       <p>
-        {{ this.todo }}
+        {{ todoo }}
       </p>
 
     </div>
