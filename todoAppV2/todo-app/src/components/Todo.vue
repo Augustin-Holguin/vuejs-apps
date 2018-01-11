@@ -8,7 +8,7 @@
     <div class="todolist">
       <ul>
         <li v-for="(todo, index) in todos">
-          {{ todo }}
+          <div class="todoshow">{{ todo }}</div>
           <button class="destroy" @click="destroyTodo(index)">x</button>
         </li>
       </ul>
@@ -82,28 +82,29 @@ export default {
 
   .todolist {
     position: absolute;
-    display: table;
+    width: 300px;
     margin-top: 20px;
   }
 
   .todolist li {
-    box-sizing: border-box;
     list-style-type: none;
+    margin-top: 30px;
+    line-height: 20px;
+  }
+
+  .todoshow {
     border: solid 2px #49c0b6;
     border-radius: 5px;
-    margin-top: 15px;
-    line-height: 30px;
-    width: 300px;
-    word-wrap: break-word;
-    padding: 0 5px;
+    padding: 5px 5px;
+    word-wrap:break-word;
   }
 
   button.destroy {
-    box-sizing: border-box;
     position: absolute;
-    right: 2px;
-    margin-top: 0;
-    height: 30px;
+    box-sizing: border-box;
+    right: 0;
+    line-height: 20px;
+    width: 20px;
     border: none;
     border-radius: 2px;
     opacity: 0.8;

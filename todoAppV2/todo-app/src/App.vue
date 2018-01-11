@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 import Todo from './components/Todo'
 
 export default {
@@ -37,5 +38,7 @@ export default {
    background-color: #f0f0f0;
    text-align: center;
    color: #49c0b6;
+   border-top: solid 1.5px #e0e0e0;
+   font-weight: bold;
  }
 </style>
