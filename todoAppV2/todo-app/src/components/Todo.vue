@@ -1,8 +1,10 @@
 <template>
   <div class="todoapp">
     <h1>TODO APP</h1><br>
+    <p>Add below your todos</p><br>
     <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
     <button @click="addTodo">Add</button>
+
     <div class="todolist">
       <ul>
         <li v-for="(todo, index) in todos">
@@ -48,20 +50,26 @@ export default {
     left: 50%;
     margin-left: -156px;
     box-sizing: border-box;
+    min-height: 100%;
   }
 
   h1 {
-    margin-bottom: 5px;
+    font-size: 3em;
+  }
+
+  p {
+    color: #49c0b6;
   }
 
   input {
-    line-height: 20px;
+    line-height: 25px;
     border-radius: 5px;
     margin-left: 10px;
+    padding-left: 4px;
   }
 
   button {
-    min-line-height: 20px;
+    line-height: 25px;
     width: 40px;
     border-radius: 5px;
     opacity: 0.8;
@@ -73,6 +81,8 @@ export default {
   }
 
   .todolist {
+    position: absolute;
+    display: table;
     margin-top: 20px;
   }
 
@@ -81,7 +91,7 @@ export default {
     list-style-type: none;
     border: solid 2px #49c0b6;
     border-radius: 5px;
-    margin: 10px;
+    margin-top: 15px;
     line-height: 30px;
     width: 300px;
     word-wrap: break-word;
@@ -89,13 +99,13 @@ export default {
   }
 
   button.destroy {
+    box-sizing: border-box;
     position: absolute;
-    right: -8px;
+    right: 2px;
+    margin-top: 0;
+    height: 30px;
     border: none;
     border-radius: 2px;
-    height: inherit;
-    width: 30px;
-    height: 30px;
     opacity: 0.8;
     color: #6d6e70;
   }
