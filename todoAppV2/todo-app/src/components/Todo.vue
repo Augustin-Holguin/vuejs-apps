@@ -1,13 +1,13 @@
 <template>
   <div class="todoapp">
-    <h1>Todo App</h1><br>
+    <h1>TODO APP</h1><br>
     <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
     <button @click="addTodo">Add</button>
     <div class="todolist">
       <ul>
-        <li v-for="i in todo">
-          {{ i }}
-          <button class="destroy" @click="destroyTodo">x</button>
+        <li v-for="(todo, index) in todos">
+          {{ todo }}
+          <button class="destroy" @click="destroyTodo(index)">x</button>
         </li>
       </ul>
     </div>
@@ -18,28 +18,21 @@
 export default {
   data () {
     return {
-      todo: [],
-      newTodo: '',
-      index: 0
+      todos: [],
+      newTodo: ''
     }
-  },
-  mounted () {
-    this.todo.forEach((newTodo) => {
-      this.newTodo.index = i
-    })
   },
   methods: {
     addTodo () {
       if (this.newTodo === '') {
         alert('Please enter your todo')
       } else {
-      this.todo.push(this.newTodo)
+      this.todos.push(this.newTodo)
       this.newTodo = ''
-      console.log(this.todo.length)
       }
     },
-    destroyTodo () {
-      this.todo.splice(this.newTodo)
+    destroyTodo (index) {
+      this.todos.splice(index, 1)
     }
   }
 }
@@ -48,6 +41,7 @@ export default {
 <style>
 
   .todoapp {
+    width: 300px;
     text-align: center;
     margin-top: 30px;
     position: absolute;
@@ -63,10 +57,11 @@ export default {
   input {
     line-height: 20px;
     border-radius: 5px;
+    margin-left: 10px;
   }
 
   button {
-    line-height: 20px;
+    min-line-height: 20px;
     width: 40px;
     border-radius: 5px;
     opacity: 0.8;
@@ -86,18 +81,21 @@ export default {
     list-style-type: none;
     border: solid 2px #49c0b6;
     border-radius: 5px;
-    line-height: 30px;
     margin: 10px;
+    line-height: 30px;
     width: 300px;
+    word-wrap: break-word;
+    padding: 0 5px;
   }
 
   button.destroy {
     position: absolute;
-    right: 12px;
+    right: -8px;
     border: none;
     border-radius: 2px;
-    height: 30px;
+    height: inherit;
     width: 30px;
+    height: 30px;
     opacity: 0.8;
     color: #6d6e70;
   }
