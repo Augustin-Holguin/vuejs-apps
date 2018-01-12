@@ -20,7 +20,7 @@
             <ul>
               <li v-for="(todo, index) in todos">
                 <div class="todoshow">{{ todo }}</div>
-                <button class="destroy" @click="destroyTodo(index)">x</button>
+                <button id="destroy" @click="destroyTodo(index)">x</button>
               </li>
             </ul>
           </div>
@@ -72,7 +72,6 @@ export default {
     width: 100%;
     margin: auto;
     text-align: center;
-    margin-top: 30px;
     position: absolute;
     box-sizing: border-box;
     min-height: 100%;
@@ -80,7 +79,10 @@ export default {
 
   h1 {
     font-size: 3em;
-    color: #008374;
+    color: #f0f0f0;
+    background: #49c0b6;
+    line-height: 70px;
+    border-bottom: solid 3px #f0f0f0;
   }
 
   h3 {
@@ -89,8 +91,11 @@ export default {
   }
 
   .categories {
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
     display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .categories ul {
@@ -98,8 +103,7 @@ export default {
   }
 
   .categories ul li {
-    width: 340px;
-    margin: 10px;
+    width: 330px;
   }
 
   p {
@@ -124,16 +128,16 @@ export default {
     opacity: 1;
   }
 
-  .todolist {
+  .categories.todolist {
     position: absolute;
     width: 340px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .todolist li {
     list-style-type: none;
-    margin-top: 30px;
     line-height: 20px;
+    margin-top: 30px;
   }
 
   .todoshow {
@@ -143,10 +147,8 @@ export default {
     word-wrap:break-word;
   }
 
-  button.destroy {
-    position: absolute;
-    box-sizing: border-box;
-    right: 0;
+  .todolist button#destroy {
+    float: right;
     line-height: 20px;
     width: 30px;
     border: none;
@@ -155,7 +157,7 @@ export default {
     color: #6d6e70;
   }
 
-  button.destroy:hover {
+  button#destroy:hover {
     opacity: 1;
     cursor: pointer;
   }
