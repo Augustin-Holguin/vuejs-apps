@@ -1,36 +1,38 @@
 <template>
   <div class="todoapp">
+
     <h1>TODO APP</h1><br>
     <p>Add below your todos</p><br>
 
-    <category></category>
+    <h3>Create a category</h3>
+    <input placeholder="Add a category" v-model="newCategory" @keyup.enter="addCategory">
+    <button @click="addCategory">Add</button>
 
-    <div class="" v-show="false">
+    <div class="categories" v-for="(category, index) in categories">
+      <ul>
+        <li>
+          <h3 style="color:#ffc168">{{ category }}</h3>
+          <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
+          <button @click="addTodo">Add</button>
 
-      <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
-      <button @click="addTodo">Add</button>
-
-      <div class="todolist">
-        <ul>
-          <li v-for="(todo, index) in todos">
-            <div class="todoshow">{{ todo }}</div>
-            <button class="destroy" @click="destroyTodo(index)">x</button>
-          </li>
-        </ul>
-      </div>
-
+          <div class="todolist">
+            <ul>
+              <li v-for="(todo, index) in todos">
+                <div class="todoshow">{{ todo }}</div>
+                <button class="destroy" @click="destroyTodo(index)">x</button>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </div>
 
   </div>
 </template>
 
 <script>
-import Category from './Category'
 
 export default {
-  components: {
-    Category
-  },
   data () {
     return {
       categories: [],
@@ -40,6 +42,14 @@ export default {
     }
   },
   methods: {
+    addCategory () {
+      if (this.newCategory === '') {
+        alert('Please enter your category name')
+      } else {
+      this.categories.push(this.newCategory)
+      this.newCategory = ''
+      }
+    },
     addTodo () {
       if (this.newTodo === '') {
         alert('Please enter your todo')
@@ -71,6 +81,23 @@ export default {
   h1 {
     font-size: 3em;
     color: #008374;
+  }
+
+  h3 {
+    color: #008374;
+    margin-bottom: 10px;
+  }
+
+  .categories {
+    margin-top: 30px;
+  }
+
+  .categories ul {
+    list-style: none;
+  }
+
+  .categories ul li {
+    display: inline;
   }
 
   p {
