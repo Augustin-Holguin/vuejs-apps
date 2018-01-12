@@ -2,24 +2,39 @@
   <div class="todoapp">
     <h1>TODO APP</h1><br>
     <p>Add below your todos</p><br>
-    <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
-    <button @click="addTodo">Add</button>
 
-    <div class="todolist">
-      <ul>
-        <li v-for="(todo, index) in todos">
-          <div class="todoshow">{{ todo }}</div>
-          <button class="destroy" @click="destroyTodo(index)">x</button>
-        </li>
-      </ul>
+    <category></category>
+
+    <div class="" v-show="false">
+
+      <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
+      <button @click="addTodo">Add</button>
+
+      <div class="todolist">
+        <ul>
+          <li v-for="(todo, index) in todos">
+            <div class="todoshow">{{ todo }}</div>
+            <button class="destroy" @click="destroyTodo(index)">x</button>
+          </li>
+        </ul>
+      </div>
+
     </div>
+
   </div>
 </template>
 
 <script>
+import Category from './Category'
+
 export default {
+  components: {
+    Category
+  },
   data () {
     return {
+      categories: [],
+      newCategory: '',
       todos: [],
       newTodo: ''
     }
@@ -43,7 +58,7 @@ export default {
 <style>
 
   .todoapp {
-    width: 300px;
+    width: 350px;
     text-align: center;
     margin-top: 30px;
     position: absolute;
@@ -55,6 +70,7 @@ export default {
 
   h1 {
     font-size: 3em;
+    color: #008374;
   }
 
   p {
@@ -64,7 +80,6 @@ export default {
   input {
     line-height: 25px;
     border-radius: 5px;
-    margin-left: 10px;
     padding-left: 4px;
   }
 
@@ -82,7 +97,7 @@ export default {
 
   .todolist {
     position: absolute;
-    width: 300px;
+    width: 340px;
     margin-top: 20px;
   }
 
@@ -104,7 +119,7 @@ export default {
     box-sizing: border-box;
     right: 0;
     line-height: 20px;
-    width: 20px;
+    width: 30px;
     border: none;
     border-radius: 2px;
     opacity: 0.8;

@@ -1,14 +1,13 @@
 <template>
   <div>
-    <todo></todo>
+      <todo></todo>
     <footer>
-        Made with love by Gus
+        Made with mucho love by Gus
     </footer>
   </div>
 </template>
 
 <script>
-
 import Todo from './components/Todo'
 
 export default {
