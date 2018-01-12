@@ -3,10 +3,11 @@
 
     <h1>TODO APP</h1><br>
     <p>Add below your todos</p><br>
-
-    <h3>Create a category</h3>
-    <input placeholder="Add a category" v-model="newCategory" @keyup.enter="addCategory">
-    <button @click="addCategory">Add</button>
+    <div>
+      <h3>Create a category</h3>
+      <input placeholder="Add a category" v-model="newCategory" @keyup.enter="addCategory">
+      <button @click="addCategory">Add</button>
+    </div>
 
     <div class="categories" v-for="(category, index) in categories">
       <ul>
@@ -68,12 +69,11 @@ export default {
 <style>
 
   .todoapp {
-    width: 350px;
+    width: 100%;
+    margin: auto;
     text-align: center;
     margin-top: 30px;
     position: absolute;
-    left: 50%;
-    margin-left: -156px;
     box-sizing: border-box;
     min-height: 100%;
   }
@@ -89,7 +89,8 @@ export default {
   }
 
   .categories {
-    margin-top: 30px;
+    margin-top: 20px;
+    display: inline-block;
   }
 
   .categories ul {
@@ -97,7 +98,8 @@ export default {
   }
 
   .categories ul li {
-    display: inline;
+    width: 340px;
+    margin: 10px;
   }
 
   p {
