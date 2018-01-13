@@ -1,6 +1,6 @@
 <template>
   <div>
-    <todo></todo>
+    <category></category>
     <footer>
         Made with mucho love by Gus
     </footer>
@@ -9,9 +9,11 @@
 
 <script>
 import Todo from './components/Todo'
+import Category from './components/Category'
 
 export default {
   components: {
+    Category,
     Todo
   }
 }

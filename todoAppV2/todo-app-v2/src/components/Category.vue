@@ -1,48 +1,54 @@
 <template>
   <div class="todoapp">
+    <h1>TODO APP</h1><br>
+    <p>Add below your todos</p><br>
 
-    <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
-    <button @click="addTodo">Add</button>
+    <div>
+      <h3>Create a category</h3>
+      <input placeholder="Add a category" v-model="newCategory" @keyup.enter="addCategory">
+      <button @click="addCategory">Add</button>
+    </div>
 
-    <div class="todolist">
+    <div class="categories" v-for="(category, index) in categories">
       <ul>
-        <li v-for="(todo, index) in todos">
-          <div class="todoshow">{{ todo }}</div>
-          <button id="destroy" @click="destroyTodo(index)">x</button>
+        <li>
+          <h3 style="color:#ffc168">{{ category }}</h3>
+          <todo></todo>
         </li>
       </ul>
     </div>
 
   </div>
+
 </template>
 
 <script>
+import Todo from './Todo'
 
 export default {
+  components : {
+    Todo
+  },
   data () {
     return {
-      todos: [],
-      newTodo: ''
+      categories: [],
+      newCategory: ''
     }
   },
   methods: {
-    addTodo () {
-      if (this.newTodo === '') {
-        alert('Please enter your todo')
+    addCategory () {
+      if (this.newCategory === '') {
+        alert('Please enter your category name')
       } else {
-      this.todos.push(this.newTodo)
-      this.newTodo = ''
+      this.categories.push(this.newCategory)
+      this.newCategory = ''
       }
-    },
-    destroyTodo (index) {
-      this.todos.splice(index, 1)
     }
   }
 }
 </script>
 
 <style>
-
   .todoapp {
     width: 100%;
     margin: auto;
@@ -50,6 +56,14 @@ export default {
     position: absolute;
     box-sizing: border-box;
     min-height: 100%;
+  }
+
+  h1 {
+    font-size: 3em;
+    color: #f0f0f0;
+    background: #49c0b6;
+    line-height: 70px;
+    border-bottom: solid 3px #f0f0f0;
   }
 
   h3 {
