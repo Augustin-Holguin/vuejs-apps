@@ -53,15 +53,14 @@ export default {
     width: 100%;
     margin: auto;
     text-align: center;
-    position: absolute;
     box-sizing: border-box;
-    min-height: 100%;
   }
 
   h1 {
+    width: inherit;
     font-size: 3em;
     color: #f0f0f0;
-    background: #49c0b6;
+    background: #008374;
     line-height: 70px;
     border-bottom: solid 3px #f0f0f0;
   }
@@ -72,11 +71,12 @@ export default {
   }
 
   .categories {
-    margin-top: 15px;
-    margin-bottom: 30px;
+    position: sticky;
+    float: left;
+    margin-left: 73px;
+    margin-top: 20px;
     display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-bottom: 30px;
   }
 
   .categories ul {
@@ -115,32 +115,5 @@ export default {
     margin-top: 10px;
   }
 
-  .todolist li {
-    list-style-type: none;
-    line-height: 20px;
-    margin-top: 30px;
-  }
-
-  .todoshow {
-    border: solid 2px #49c0b6;
-    border-radius: 5px;
-    padding: 5px 5px;
-    word-wrap:break-word;
-  }
-
-  .todolist button#destroy {
-    float: right;
-    line-height: 20px;
-    width: 30px;
-    border: none;
-    border-radius: 2px;
-    opacity: 0.8;
-    color: #6d6e70;
-  }
-
-  button#destroy:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
 
 </style>

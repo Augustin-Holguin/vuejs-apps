@@ -1,16 +1,18 @@
 <template>
   <div class="todoapp">
 
-    <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
-    <button @click="addTodo">Add</button>
+    <div class="todoForm">
+      <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
+      <button @click="addTodo">Add</button>
 
-    <div class="todolist">
-      <ul>
-        <li v-for="(todo, index) in todos">
-          <div class="todoshow">{{ todo }}</div>
-          <button id="destroy" @click="destroyTodo(index)">x</button>
-        </li>
-      </ul>
+      <div class="todolist">
+        <ul>
+          <li v-for="(todo, index) in todos">
+            <div class="todoshow">{{ todo }}</div>
+            <button id="destroy" @click="destroyTodo(index)">x</button>
+          </li>
+        </ul>
+      </div>
     </div>
 
   </div>
@@ -43,38 +45,9 @@ export default {
 
 <style>
 
-  .todoapp {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    position: absolute;
-    box-sizing: border-box;
-    min-height: 100%;
-  }
-
-  h3 {
-    color: #008374;
-    margin-bottom: 10px;
-  }
-
-  .categories {
-    margin-top: 15px;
-    margin-bottom: 30px;
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .categories ul {
-    list-style: none;
-  }
-
-  .categories ul li {
+  .todoForm {
     width: 330px;
-  }
-
-  p {
-    color: #49c0b6;
+    overflow: auto;
   }
 
   input {
@@ -93,12 +66,6 @@ export default {
   button:hover {
     cursor: pointer;
     opacity: 1;
-  }
-
-  .categories.todolist {
-    position: absolute;
-    width: 340px;
-    margin-top: 10px;
   }
 
   .todolist li {
