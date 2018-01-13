@@ -13,6 +13,7 @@
       <ul>
         <li>
           <h3 style="color:#ffc168">{{ category }}</h3>
+          <button id="close" @click="deleteCategory(index)">&times;</button>
           <todo></todo>
         </li>
       </ul>
@@ -43,6 +44,9 @@ export default {
       this.categories.push(this.newCategory)
       this.newCategory = ''
       }
+    },
+    deleteCategory (index) {
+      this.categories.splice(index, 1)
     }
   }
 }
@@ -77,6 +81,16 @@ export default {
     margin-top: 20px;
     display: inline-block;
     margin-bottom: 30px;
+  }
+
+  .categories button#close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    width: 20px;
+    font-size: 1em;
   }
 
   .categories ul {
