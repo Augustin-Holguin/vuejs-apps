@@ -64,13 +64,13 @@ export default {
     width: inherit;
     font-size: 3em;
     color: #f0f0f0;
-    background: #008374;
+    background: #cd595a;
     line-height: 70px;
     border-bottom: solid 3px #f0f0f0;
   }
 
   h3 {
-    color: #008374;
+    color: #cd595a;
     margin-bottom: 10px;
   }
 
@@ -93,6 +93,11 @@ export default {
     font-size: 1em;
   }
 
+  .categories button#close:hover {
+    color: #a71930;
+    font-weight: bold;
+  }
+
   .categories ul {
     list-style: none;
   }
@@ -102,7 +107,7 @@ export default {
   }
 
   p {
-    color: #49c0b6;
+    color: #cd595a;
   }
 
   input {
@@ -128,6 +133,5 @@ export default {
     width: 340px;
     margin-top: 10px;
   }
-
 
 </style>

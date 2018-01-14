@@ -3,13 +3,13 @@
 
     <div class="todoForm">
       <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
-      <button @click="addTodo">Add</button>
+      <button id="add" @click="addTodo">Add</button>
 
       <div class="todolist">
         <ul>
           <li v-for="(todo, index) in todos">
             <div class="todoshow">{{ todo }}</div>
-            <button id="destroy" @click="destroyTodo(index)">x</button>
+            <button id="destroy" @click="destroyTodo(index)">&times;</button>
           </li>
         </ul>
       </div>
@@ -46,7 +46,7 @@ export default {
 <style>
 
   .todoForm {
-    width: 330px;
+    width: 332px;
     overflow: auto;
   }
 
@@ -56,42 +56,44 @@ export default {
     padding-left: 4px;
   }
 
-  button {
+  #add {
     line-height: 25px;
     width: 40px;
     border-radius: 5px;
     opacity: 0.8;
   }
 
-  button:hover {
+  #add:hover {
     cursor: pointer;
     opacity: 1;
   }
 
   .todolist li {
+    background: #eeeeee;
+    border: solid .5px grey;
+    border-radius: 5px;
     list-style-type: none;
     line-height: 20px;
     margin-top: 30px;
   }
 
   .todoshow {
-    border: solid 2px #49c0b6;
-    border-radius: 5px;
     padding: 5px 5px;
     word-wrap:break-word;
   }
 
-  .todolist button#destroy {
-    float: right;
+  #destroy {
+    position: absolute;
+    right: 0;
     line-height: 20px;
-    width: 30px;
+    width: 20px;
     border: none;
-    border-radius: 2px;
+    background: none;
     opacity: 0.8;
     color: #6d6e70;
   }
 
-  button#destroy:hover {
+  #destroy:hover {
     opacity: 1;
     cursor: pointer;
   }
