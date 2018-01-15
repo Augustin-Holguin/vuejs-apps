@@ -64,7 +64,7 @@ export default {
     width: inherit;
     font-size: 3em;
     color: #f0f0f0;
-    background: #cd595a;
+    background: #caccd1;
     line-height: 70px;
     border-bottom: solid 3px #f0f0f0;
   }
@@ -133,5 +133,6 @@ export default {
     width: 340px;
     margin-top: 10px;
   }
+
 
 </style>
