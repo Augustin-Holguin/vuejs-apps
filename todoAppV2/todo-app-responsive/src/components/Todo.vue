@@ -1,7 +1,7 @@
 <template>
   <div class="todoapp">
 
-    <div class="todoForm">
+    <div class="">
       <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
       <button id="add" @click="addTodo">Add</button>
 
@@ -44,11 +44,6 @@ export default {
 </script>
 
 <style>
-
-  .todoForm {
-    width: 332px;
-    overflow: auto;
-  }
 
   input {
     line-height: 25px;

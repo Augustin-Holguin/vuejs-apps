@@ -1,22 +1,24 @@
 <template>
   <div class="todoapp">
-    <h1>TODO APP</h1><br>
-    <p>Add below your todos</p><br>
+    <h1>TODO APP</h1>
+    <p>Add below your todos</p>
 
     <div>
-      <h3>Create a category</h3>
+      <h3>Create a category</h3><br>
       <input placeholder="Add a category" v-model="newCategory" @keyup.enter="addCategory">
       <button @click="addCategory">Add</button>
     </div>
 
-    <div class="col-md-4" v-for="(category, index) in categories">
-      <ul>
-        <li>
-          <h3 style="color:#ffc168">{{ category }}</h3>
-          <button id="close" @click="deleteCategory(index)">&times;</button>
-          <todo></todo>
-        </li>
-      </ul>
+    <div class="container">
+      <div class="row">
+        <div v-for="(category, index) in categories">
+          <div class="col-md-4">
+            <h3 style="color:#ffc168">{{ category }}</h3>
+            <button id="close" @click="deleteCategory(index)">&times;</button>
+              <todo></todo>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -54,7 +56,6 @@ export default {
 
 <style>
   .todoapp {
-    width: 100%;
     margin: auto;
     text-align: center;
     box-sizing: border-box;
@@ -71,43 +72,26 @@ export default {
 
   h3 {
     color: #cd595a;
-    margin-bottom: 10px;
-  }
-
-  .categories {
-    position: sticky;
-    float: left;
-    margin-left: 73px;
-    margin-top: 20px;
-    display: inline-block;
-    margin-bottom: 30px;
   }
 
   .col-md-4 {
-    display: inline;
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 
   .col-md-4 button#close {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: relative;
+    margin-top: -10px;
+    margin-left: 300px;;
     background: none;
     border: none;
     width: 20px;
     font-size: 1em;
   }
 
-  .categories button#close:hover {
+  .col-md-4 button#close:hover {
     color: #a71930;
     font-weight: bold;
-  }
-
-  .categories ul {
-    list-style: none;
-  }
-
-  .categories ul li {
-    width: 330px;
   }
 
   p {
@@ -131,12 +115,5 @@ export default {
     cursor: pointer;
     opacity: 1;
   }
-
-  .categories.todolist {
-    position: absolute;
-    width: 340px;
-    margin-top: 10px;
-  }
-
 
 </style>

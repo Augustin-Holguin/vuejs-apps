@@ -27,6 +27,7 @@ export default {
  }
 
  body {
+   margin-top: -20px;
  }
 
  footer {
