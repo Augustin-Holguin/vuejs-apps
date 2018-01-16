@@ -28,6 +28,7 @@ export default {
 
  body {
    margin-top: -20px;
+   min-height: 100%;
  }
 
  footer {
@@ -37,8 +38,9 @@ export default {
    line-height: 35px;
    background-color: #f0f0f0;
    text-align: center;
-   color: #008374;
+   color: #cd595a;
    border-top: solid 1.5px #e0e0e0;
    font-weight: bold;
  }
+ 
 </style>

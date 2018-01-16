@@ -1,10 +1,9 @@
 <template>
   <div class="todoapp">
-    <h1>TODO APP</h1>
-    <p>Add below your todos</p>
+    <h1>todoo.</h1>
 
     <div>
-      <h3>Create a category</h3><br>
+      <h3 id="indication">Create a category</h3><br>
       <input placeholder="Add a category" v-model="newCategory" @keyup.enter="addCategory">
       <button @click="addCategory">Add</button>
     </div>
@@ -13,7 +12,7 @@
       <div class="row">
         <div v-for="(category, index) in categories">
           <div class="col-md-4">
-            <h3 style="color:#ffc168">{{ category }}</h3>
+            <h3 id="categoryName">{{ category }}</h3>
             <button id="close" @click="deleteCategory(index)">&times;</button>
               <todo></todo>
           </div>
@@ -64,18 +63,25 @@ export default {
   h1 {
     width: inherit;
     font-size: 3em;
-    color: #f0f0f0;
-    background: #caccd1;
+    font-weight: bold;
+    color: #cd595a;
+    background: #f0f0f0;
     line-height: 70px;
-    border-bottom: solid 3px #f0f0f0;
+    border-bottom: solid 3px #e0e0e0;
   }
 
-  h3 {
-    color: #cd595a;
+  #indication {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #004990;
+  }
+
+  #categoryName {
+    margin-bottom: -5px;
+    color: #004990;
   }
 
   .col-md-4 {
-    margin-top: 20px;
     margin-bottom: 30px;
   }
 
