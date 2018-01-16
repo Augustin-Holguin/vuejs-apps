@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-
+    <div id="empty"></div>
   </div>
 
 </template>
@@ -37,6 +37,7 @@ export default {
       newCategory: ''
     }
   },
+  props: ['todo'],
   methods: {
     addCategory () {
       if (this.newCategory === '') {
@@ -120,6 +121,10 @@ export default {
   button:hover {
     cursor: pointer;
     opacity: 1;
+  }
+
+  #empty {
+    height: 30px;
   }
 
 </style>
