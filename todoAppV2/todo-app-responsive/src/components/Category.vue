@@ -14,7 +14,7 @@
           <div class="col-md-4">
             <h3 id="categoryName">{{ category }}</h3>
             <button id="close" @click="deleteCategory(index)">&times;</button>
-              <todo></todo>
+            <todo></todo>
           </div>
         </div>
       </div>
@@ -37,7 +37,6 @@ export default {
       newCategory: ''
     }
   },
-  props: ['todo'],
   methods: {
     addCategory () {
       if (this.newCategory === '') {
@@ -49,7 +48,7 @@ export default {
     },
     deleteCategory (index) {
       this.categories.splice(index, 1)
-    }
+    },
   }
 }
 </script>
