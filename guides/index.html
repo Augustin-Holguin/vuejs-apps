@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+    <link rel="stylesheet" href="main.css" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <ol>
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id">
+        </todo-item>
+      </ol>
+      <button @click="yyy">Klik</button>
+
+    </div>
+
+    <script>
+      Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li> {{ todo.id + `: ` + todo.text }}</li>'
+      })
+
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          groceryList: [
+            { id: 0, text: 'Vegetables' },
+            { id: 1, text: 'Cheese'},
+            { id: 2, text: 'Bread'}
+          ]
+        },
+        methods: {
+          yyy() {
+            console.log(vm.$el)
+          }
+        }
+      })
+
+    </script>
+  </body>
+</html>
