@@ -40,6 +40,9 @@ export default {
     },
     destroyTodo (index) {
       this.todos.splice(index, 1)
+    },
+    yolo() {
+      console.log('yep it works')
     }
   }
 }

@@ -17,6 +17,8 @@
         </todo-item>
       </ol>
       <button @click="yyy">Klik</button>
+      <br><hr>
+      <span>{{ user.firstname + ` ` + user.lastname }}</span>
 
     </div>
 
@@ -29,6 +31,10 @@
       var vm = new Vue({
         el: '#app',
         data: {
+          user: {
+            firstname: "James",
+            lastname: "Doe"
+          },
           groceryList: [
             { id: 0, text: 'Vegetables' },
             { id: 1, text: 'Cheese'},

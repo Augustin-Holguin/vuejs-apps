@@ -46,8 +46,8 @@ export default {
       this.newCategory = ''
       }
     },
-    deleteCategory (index) {
-      this.categories.splice(index, 1)
+    deleteCategory (category) {
+      this.categories.splice(category, 1)
     },
   }
 }
