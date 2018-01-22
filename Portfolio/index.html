@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://unpkg.com/vue"></script>
+  <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="main.css" type="text/css"/>
+</head>
+<body>
+  <div id="particles-js">
+    <div id="app">
+      <div class="content">
+        <h1>Augustin Holguín</h1>
+        <ul>
+          <li @click="showAbout">About</li>
+          <li @click="showExperience">Experience</li>
+          <li @click="showPortfolio">Portfolio</li>
+          <li @click="showMusic">Music</li>
+          <li @click="showContact">Contact</li>
+        </ul>
+
+        <!-- ABOUT -->
+        <div class="about" v-if="about">
+          <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAubAAAAJDcwODM2MmJkLWU4ZjEtNGE2Yy1hOTAyLTYyZTNkN2I4N2JmYw.jpg">
+          <h3>
+            25 years old master student at Rotterdam School of Management (Erasmus University)
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="experience" v-if="experience">
+          <ul>
+            <li>2014</li>
+            <li>2015</li>
+            <li>2016</li>
+            <li>2017</li>
+            <li>2018</li>
+          </ul>
+        </div>
+
+        <!-- PORTFOLIO -->
+        <div class="portfolio" v-if="portfolio">
+          <h3>MyBnB</h3>
+          <p>A clone of Airbnb which I built from scratch as a final project with 2 friends during the coding bootcamp The Hacking Project during the summer of 2017 <br> Website: https://mybandb.herokuapp.com/</p>
+        </div>
+
+        <!-- MUSIC -->
+        <div class="music" v-if="music">
+          <h4>Musician since the age of 9 (guitar, drums, piano), I have been producing music since 2013</h4>
+          <p>More music on my Soundcloud</p>
+          <iframe width="200" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/383422325&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+          <iframe width="200" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/338547957&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact" v-if="contact">
+          <a href="https://github.com/gusholguin" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/AugustinHolguin" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://medium.com/@augustin.holguin" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/augustinholguin/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <br><br>email: augustin.holguin@gmail.com<br>
+          tel: +33 (0) 6 27 41 57 11
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Made with love in Paris - 2018
+    </footer>
+  </div>
+
+  <script>
+  var app = new Vue ({
+    el: '#app',
+    data () {
+      return {
+        about: true,
+        experience: false,
+        portfolio: false,
+        music: false,
+        contact: false
+      }
+    },
+    methods: {
+      showAbout () {
+        this.about = true
+        this.experience = false
+        this.portfolio = false
+        this.contact = false
+        this.music = false
+      },
+      showExperience () {
+        this.experience = true
+        this.portfolio = false
+        this.contact = false
+        this.about = false
+        this.music = false
+      },
+      showPortfolio () {
+        this.portfolio = true
+        this.experience = false
+        this.contact = false
+        this.about = false
+        this.music = false
+      },
+      showMusic () {
+        this.music = true
+        this.portfolio = false
+        this.experience = false
+        this.contact = false
+        this.about = false
+      },
+      showContact () {
+        this.contact = true
+        this.experience = false
+        this.portfolio = false
+        this.about = false
+        this.music = false
+      }
+    }
+  })
+  </script>
+  <script type="text/javascript" src="./particles/particles.js"></script>
+  <script type="text/javascript" src="./particles/particle2.js"></script>
+</body>
+</html>

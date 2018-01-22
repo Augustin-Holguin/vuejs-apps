@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f9f9fb;
+  font-family: 'Catamaran', sans-serif;
+  width: 100%;
+  height: 100%;
+  color: #123962;
+}
+
+.content {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+#particles-js {
+  position: absolute;
+  height: 100%;
+  width: 100%
+}
+
+h1 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #005696;
+  font-size: 3.5em;
+}
+
+ul li {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+ul li:hover {
+  box-sizing: border-box;
+  cursor: pointer;
+  border-bottom: solid 2px #fdb813;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* ABOUT */
+.about {
+  box-sizing: border-box;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+}
+
+.about h3 {
+  color: #005696;
+  padding-top: 15px;
+  padding-left: 120px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+}
+
+.about img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: left;
+}
+
+/* ABOUT */
+.experience li {
+  color: crimson;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.experience li:hover {
+  border: none;
+}
+
+/* MUSIC */
+
+.music h4 {
+  color: #005696;
+  padding-bottom: 10px;
+}
+
+.music p {
+  padding-bottom: 10px;
+}
+
+.music iframe {
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 240px;
+}
+
+/* CONTACT */
+
+.contact {
+  box-sizing: border-box;
+  border: solid 2px #005696;
+  width: 400px;
+  height: 200px;
+  margin: auto;
+}
+
+.contact i {
+  color: #005696;
+  padding: 20px 12px 0 12px;
+  font-size: 30px;
+}
+
+.contact i:hover {
+  color: #fd5c63;
+}
+
+
+footer {
+  position: absolute;
+  text-align: center;
+  line-height: 20px;
+  padding-top: 10px;
+  width: 100%;
+  bottom: 0;
+  background: #f3f4f7;
+  color: #005696;
+  border-top: solid 1px #f0f0f0;
+}
