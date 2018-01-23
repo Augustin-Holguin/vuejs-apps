@@ -70,7 +70,7 @@ ul li:hover {
   float: left;
 }
 
-/* ABOUT */
+/* EXPERIENCE */
 .experience li {
   color: crimson;
   margin-left: 15px;
@@ -80,6 +80,17 @@ ul li:hover {
 .experience li:hover {
   border: none;
 }
+
+/* PORTFOLIO */
+.portfolio {
+  background: #f9f9fb;
+  box-sizing: border-box;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  border: solid 2px #005696;
+}
+
 
 /* MUSIC */
 
