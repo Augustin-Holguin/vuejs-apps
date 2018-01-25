@@ -1,0 +1,56 @@
+class NotificationsStore {
+
+  constructor () {
+    this.state = {
+      count: 0
+    }
+  }
+
+  increment () {
+    this.state.count++
+  }
+
+  decrement () {
+    this.state.count--
+  }
+
+}
+
+let notifications_store = new NotificationsStore()
+
+let Counter = Vue.component('counter', {
+  data: function () {
+    return {
+      state: notifications_store.state
+    }
+  },
+  computed: {
+    count: function () {
+      return this.state.count
+    }
+  },
+  methods: {
+    increment: function () {
+      notifications_store.increment()
+    }
+  },
+  template: `<button @click="increment">{{ count }}</button>`
+})
+
+let Notifications = Vue.component('notification', {
+  components: { Counter },
+  methods: {
+    addNotification: function () {
+      notifications_store.increment()
+    }
+  },
+  template: `<div>
+  <counter></counter>
+  <button @click="addNotification">Increment</button>
+</div>`
+})
+
+new Vue({
+  el: '#app',
+  components: { Notifications, Counter }
+})

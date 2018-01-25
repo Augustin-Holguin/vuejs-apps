@@ -4,21 +4,41 @@
   <meta charset="utf-8">
   <script src="https://unpkg.com/vue"></script>
   <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
   <link rel="stylesheet" href="main.css" type="text/css"/>
 </head>
 <body>
   <div id="particles-js">
     <div id="app">
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active" @click="showAbout">
+                <a class="nav-link">About<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item" @click="showExperience">
+                <a class="nav-link">Experience</a>
+              </li>
+              <li class="nav-item" @click="showPortfolio">
+                <a class="nav-link">Portfolio</a>
+              </li>
+              <li class="nav-item" @click="showMusic">
+                <a class="nav-link">Music</a>
+              </li>
+              <li class="nav-item" @click="showContact">
+                <a class="nav-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
       <div class="content">
         <h1>Augustin Holguín</h1>
-        <ul>
-          <li @click="showAbout">About</li>
-          <li @click="showExperience">Experience</li>
-          <li @click="showPortfolio">Portfolio</li>
-          <li @click="showMusic">Music</li>
-          <li @click="showContact">Contact</li>
-        </ul>
 
         <!-- ABOUT -->
         <div class="about" v-if="about">
@@ -70,9 +90,12 @@
         </div>
       </div>
     </div>
-
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Made with love in Paris - 2018</span>
+      </div>
+    </footer>
     <footer>
-      Made with love in Paris - 2018
     </footer>
   </div>
 
