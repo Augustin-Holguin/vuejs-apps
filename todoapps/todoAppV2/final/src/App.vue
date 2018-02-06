@@ -1,6 +1,7 @@
 <template>
   <div>
-    <category></category>
+    <new-category></new-category>
+    
     <footer>
         Made with mucho love by Gus
     </footer>
@@ -10,9 +11,11 @@
 <script>
 import Todo from './components/Todo'
 import Category from './components/Category'
+import NewCategory from './components/NewCategory'
 
 export default {
   components: {
+    NewCategory,
     Category,
     Todo
   }

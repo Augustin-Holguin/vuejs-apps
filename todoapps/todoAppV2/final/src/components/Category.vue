@@ -1,27 +1,22 @@
 <template>
   <div class="todoapp">
-    <h1>todoo.</h1>
 
-    <div>
-      <h3 id="indication">Create a category</h3><br>
-      <input placeholder="Add a category" v-model="newCategory" @keyup.enter="addCategory">
-      <button @click="addCategory">Add</button>
-    </div>
+    <h3>{{ categories }}</h3>
+
 
     <div class="container">
       <div class="row">
         <div v-for="(category, index) in categories">
           <div class="col-md-4">
-            <h3 id="categoryName">{{ category }}</h3>
-            <button id="close" @click="deleteCategory(category)">&times;</button>
+            <button id="close" @click="deleteCategory(index)">&times;</button>
             <todo></todo>
           </div>
         </div>
       </div>
     </div>
+
     <div id="empty"></div>
   </div>
-
 </template>
 
 <script>
@@ -31,24 +26,10 @@ export default {
   components : {
     Todo
   },
-  props: ['todos'],
-  data () {
-    return {
-      categories: [],
-      newCategory: '',
-    }
-  },
+  props: ['categories'],
   methods: {
-    addCategory () {
-      if (this.newCategory === '') {
-        alert('Please enter your category name')
-      } else {
-      this.categories.push(this.newCategory)
-      this.newCategory = ''
-      }
-    },
-    deleteCategory (category) {
-      this.categories.splice(category, 1)
+    deleteCategory (index) {
+      this.$delete(this.categories, index)
     }
   }
 }
@@ -74,11 +55,6 @@ export default {
   #indication {
     margin-top: 25px;
     font-weight: bold;
-    color: #004990;
-  }
-
-  #categoryName {
-    margin-bottom: -5px;
     color: #004990;
   }
 
