@@ -14,7 +14,7 @@
           <div class="col-md-4">
             <h3 id="categoryName">{{ category }}</h3>
             <button id="close" @click="deleteCategory(index)">&times;</button>
-            <todo></todo>
+            <todo v-on:updateTodo="updateCategory($event)"></todo>
           </div>
         </div>
       </div>
@@ -36,6 +36,7 @@ export default {
     return {
       categories: [],
       newCategory: '',
+      name: 'Gus'
     }
   },
   methods: {
@@ -49,6 +50,9 @@ export default {
     },
     deleteCategory (index) {
       this.$delete(this.categories, index)
+    },
+    updateCategory (yolo) {
+      this.categories[index].push(yolo)
     }
   }
 }

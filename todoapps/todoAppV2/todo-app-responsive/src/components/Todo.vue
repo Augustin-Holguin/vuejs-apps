@@ -37,6 +37,7 @@ export default {
       this.todos.push(this.newTodo)
       this.newTodo = ''
       // ADD a $emit function here to let know parent (category) that we added shit
+      this.$emit('updateTodo', this.todos)
       }
     },
     destroyTodo (index) {
