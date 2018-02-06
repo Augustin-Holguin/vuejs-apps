@@ -13,7 +13,7 @@
         <div v-for="(category, index) in categories">
           <div class="col-md-4">
             <h3 id="categoryName">{{ category }}</h3>
-            <button id="close" @click="deleteCategory(category)">&times;</button>
+            <button id="close" @click="deleteCategory(index)">&times;</button>
             <todo></todo>
           </div>
         </div>
@@ -47,8 +47,8 @@ export default {
       this.newCategory = ''
       }
     },
-    deleteCategory (category) {
-      this.categories.splice(category, 1)
+    deleteCategory (index) {
+      this.$delete(this.categories, index)
     }
   }
 }
