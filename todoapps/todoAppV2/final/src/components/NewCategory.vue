@@ -10,10 +10,9 @@
 
     <div v-for="category in categories">
       <div class="col-md-4">
-        <app-category v-show="cat" :bouya="cat"></app-category>
+        <app-category v-show="cat" :bouya="cat" v-on:changeCategoryState="updateCategoryState($event)"></app-category>
       </div>
     </div>
-  <!--   <app-category :categories="categories"></app-category> -->
 
   </div>
 </template>
@@ -38,9 +37,13 @@ export default {
       if (this.newCategory === '') {
         alert('Please enter your category name')
       } else {
-      this.categories.push(this.newCategory)
-      this.newCategory = ''
+        this.newCategory = this.cat
+        this.categories.push(this.newCategory)
+        this.newCategory = ''
       }
+    },
+    updateCategoryState (kiki) {
+      this.cat = kiki
     }
   }
 }

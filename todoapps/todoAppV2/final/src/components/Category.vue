@@ -34,7 +34,7 @@ export default {
   methods: {
     deleteCategory () {
       this.kikou = false
-      console.log(this.kikou)
+      this.$emit('changeCategoryState', this.kikou)
     }
   }
 }
