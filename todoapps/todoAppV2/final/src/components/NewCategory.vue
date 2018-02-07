@@ -8,9 +8,12 @@
       <button @click="addCategory">Add</button>
     </div>
 
-    <app-category :categories="categories">
-      <app-todo :name="newCategory"></app-todo>
-    </app-category>
+    <div v-for="category in categories">
+      <div class="col-md-4">
+        <app-category v-show="cat" :bouya="cat"></app-category>
+      </div>
+    </div>
+  <!--   <app-category :categories="categories"></app-category> -->
 
   </div>
 </template>
@@ -21,14 +24,13 @@ import Todo from './Todo'
 
 export default {
   components: {
-    'app-category': Category,
-    'app-todo': Todo
+    'app-category': Category
   },
   data () {
     return {
       categories: [],
       newCategory: '',
-      name: ''
+      cat: true
     }
   },
   methods: {

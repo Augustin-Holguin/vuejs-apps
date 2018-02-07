@@ -2,8 +2,6 @@
   <div class="todoapp">
 
     <div>
-      <h3 id="categoryName">{{ name }}</h3>
-      <button id="close" @click="deleteTodo">&times;</button>
       <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
       <button id="add" @click="addTodo">Add</button>
 
@@ -25,7 +23,6 @@
 <script>
 
 export default {
-  props: ['name'],
   data () {
     return {
       todos: [],
@@ -43,9 +40,6 @@ export default {
     },
     destroyTodo (index) {
       this.todos.splice(index, 1)
-    },
-    deleteTodo () {
-      this.$delete(this.todo)
     }
   }
 }

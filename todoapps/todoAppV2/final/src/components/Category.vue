@@ -1,17 +1,12 @@
 <template>
   <div class="todoapp">
 
-    <h3>{{ categories }}</h3>
-
-
     <div class="container">
       <div class="row">
-        <div v-for="(category, index) in categories">
           <div class="col-md-4">
-            <button id="close" @click="deleteCategory(index)">&times;</button>
+            <button id="close" @click="deleteCategory()">&times;</button><br>
             <todo></todo>
           </div>
-        </div>
       </div>
     </div>
 
@@ -26,10 +21,20 @@ export default {
   components : {
     Todo
   },
-  props: ['categories'],
+  props: {
+    bouya: {
+      type: Boolean
+    }
+  },
+  data () {
+    return {
+      kikou: this.bouya
+    }
+  },
   methods: {
-    deleteCategory (index) {
-      this.$delete(this.categories, index)
+    deleteCategory () {
+      this.kikou = false
+      console.log(this.kikou)
     }
   }
 }
