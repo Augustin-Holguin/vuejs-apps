@@ -11,10 +11,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4" v-for="(category, index) in categories">
-          <todo v-on:updateTodo="updateCategory($event)">
-            <h3 id="categoryName">{{ category }}</h3>
-            <button id="close" @click="deleteCategory(index)">&times;</button>
-          </todo>
+          <h3 id="categoryName">{{ category }}</h3>
+          <button id="close" @click="deleteCategory(index)">&times;</button>
+          <todo v-on:updateTodo="updateCategory($event)"></todo>
         </div>
       </div>
     </div>
