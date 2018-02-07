@@ -11,9 +11,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4" v-for="(category, index) in categories">
-          <h3 id="categoryName">{{ category }}</h3>
-          <button id="close" @click="deleteCategory(index)">&times;</button>
-          <todo v-on:updateTodo="updateCategory($event)"></todo>
+          <todo v-on:updateTodo="updateCategory($event)">
+            <h3 id="categoryName">{{ category }}</h3>
+            <button id="close" @click="deleteCategory(index)">&times;</button>
+          </todo>
         </div>
       </div>
     </div>
@@ -34,7 +35,7 @@ export default {
     return {
       categories: [],
       newCategory: '',
-      name: 'Gus'
+      category: []
     }
   },
   methods: {
@@ -42,7 +43,7 @@ export default {
       if (this.newCategory === '') {
         alert('Please enter your category name')
       } else {
-      this.categories.push(this.newCategory)
+      this.category = this.categories.push(this.newCategory)
       this.newCategory = ''
       }
     },
@@ -50,7 +51,7 @@ export default {
       this.$delete(this.categories, index)
     },
     updateCategory (yolo) {
-      this.categories[index].push(yolo)
+      this.category = yolo
     }
   }
 }

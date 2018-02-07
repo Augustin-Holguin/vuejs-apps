@@ -35,9 +35,8 @@ export default {
         alert('Please enter your todo')
       } else {
       this.todos.push(this.newTodo)
+      this.$emit('updateTodo', this.todos.payload)
       this.newTodo = ''
-      // ADD a $emit function here to let know parent (category) that we added shit
-      this.$emit('updateTodo', this.todos)
       }
     },
     destroyTodo (index) {
