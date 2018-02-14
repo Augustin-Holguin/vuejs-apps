@@ -35,7 +35,6 @@ export default {
         alert('Please enter your todo')
       } else {
       this.todos.push(this.newTodo)
-      this.$emit('updateTodo', this.todos.payload)
       this.newTodo = ''
       }
     },

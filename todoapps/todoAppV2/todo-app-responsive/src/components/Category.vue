@@ -13,7 +13,7 @@
         <div class="col-md-4" v-for="(category, index) in categories">
           <h3 id="categoryName">{{ category }}</h3>
           <button id="close" @click="deleteCategory(index)">&times;</button>
-          <todo v-on:updateTodo="updateCategory($event)"></todo>
+          <todo></todo>
         </div>
       </div>
     </div>
@@ -29,12 +29,10 @@ export default {
   components : {
     Todo
   },
-  props: ['todos'],
   data () {
     return {
       categories: [],
-      newCategory: '',
-      category: []
+      newCategory: ''
     }
   },
   methods: {
