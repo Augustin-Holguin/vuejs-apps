@@ -47,58 +47,5 @@ export default {
 
 <style>
 
-  input {
-    line-height: 25px;
-    border-radius: 5px;
-    padding-left: 4px;
-  }
-
-  #add {
-    line-height: 25px;
-    width: 40px;
-    border-radius: 5px;
-    opacity: 0.8;
-  }
-
-  #add:hover {
-    cursor: pointer;
-    opacity: 1;
-  }
-
-  .todolist li {
-    border: solid .5px grey;
-    border-radius: 5px;
-    list-style-type: none;
-    line-height: 20px;
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  .todolist li:hover {
-    background: #efecea;
-  }
-
-  .todoshow {
-    padding: 5px 5px;
-    word-wrap:break-word;
-  }
-
-  #destroy {
-    position: absolute;
-    line-height: 20px;
-    right: 35px;
-    width: 20px;
-    border: none;
-    background: none;
-    opacity: 0.8;
-    color: #6d6e70;
-  }
-
-  #destroy:hover {
-    opacity: 1;
-    cursor: pointer;
-    font-weight: bold;
-  }
 
 </style>

@@ -13,7 +13,21 @@
         <div class="col-md-4" v-for="(category, index) in categories">
           <h3 id="categoryName">{{ category }}</h3>
           <button id="close" @click="deleteCategory(index)">&times;</button>
-          <todo></todo>
+
+          <input type="text" placeholder="Add a todo" v-model="newTodo" @keyup.enter="addTodo"></input>
+          <button id="add" @click="addTodo">Add</button>
+
+          <div class="todolist">
+            <ul>
+              <li v-for="(todo, index) in todos">
+                <div class="todoshow">
+                  {{ todo }}
+                  <button id="destroy" @click="destroyTodo(index)">&times;</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
@@ -23,16 +37,14 @@
 </template>
 
 <script>
-import Todo from './Todo'
 
 export default {
-  components : {
-    Todo
-  },
   data () {
     return {
       categories: [],
-      newCategory: ''
+      newCategory: '',
+      todos: [],
+      newTodo: ''
     }
   },
   methods: {
@@ -47,8 +59,16 @@ export default {
     deleteCategory (index) {
       this.$delete(this.categories, index)
     },
-    updateCategory (yolo) {
-      this.category = yolo
+    addTodo () {
+      if (this.newTodo === '') {
+        alert('Please enter your todo')
+      } else {
+      this.todos.push(this.newTodo)
+      this.newTodo = ''
+      }
+    },
+    destroyTodo (index) {
+      this.todos.splice(index, 1)
     }
   }
 }
@@ -125,6 +145,61 @@ export default {
 
   #empty {
     height: 30px;
+  }
+
+  /* todo */
+  .todolist li {
+    border: solid .5px grey;
+    border-radius: 5px;
+    list-style-type: none;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .todolist li:hover {
+    background: #efecea;
+  }
+
+  .todoshow {
+    padding: 5px 5px;
+    word-wrap:break-word;
+  }
+
+  input {
+    line-height: 25px;
+    border-radius: 5px;
+    padding-left: 4px;
+  }
+
+  #add {
+    line-height: 25px;
+    width: 40px;
+    border-radius: 5px;
+    opacity: 0.8;
+  }
+
+  #add:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  #destroy {
+    position: absolute;
+    line-height: 20px;
+    right: 35px;
+    width: 20px;
+    border: none;
+    background: none;
+    opacity: 0.8;
+    color: #6d6e70;
+  }
+
+  #destroy:hover {
+    opacity: 1;
+    cursor: pointer;
+    font-weight: bold;
   }
 
 </style>
